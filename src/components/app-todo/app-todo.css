@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  /* Como o elemento deverá tratar o padding, colocando border box dizemos que ele irá somar o padding ao height e width do elemento */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+.todo {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.5;
+
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+}
+
+.form-todo {
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0px 20px 0px 20px;
+  height: 628px;
+}
+
+.titulo {
+  display: block;
+  font-family: Poppins-Bold;
+  font-size: 39px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* CSS DO BLOCO E INPUT */
+/*
+  .input {
+    display: grid;
+    grid-template: 1fr / 9fr 1fr;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444;
+  }
+*/
+.input .input--descricao {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.5;
+  padding-left: 5px;
+}
+
+.input input {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-family: Poppins-Medium;
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.2;
+  padding: 0 5px;
+  height: 40px;
+}
+
+.input .input--botao {
+  align-self: center;
+  width: 100%;
+  margin-top: 10px;
+  border: 0px;
+  height: 41px;
+}
+
+.wrap-input {
+  width: 100%;
+  border-bottom: 2px solid #d9d9d9;
+  margin-bottom: 10px;
+}
+
+.lista{
+  margin-top: 14px;
+}
+/* CSS DO BLOCO DE */
+
+.tarefa {
+  display: grid;
+  grid-template: 1fr / 9fr 1fr;
+}
+
+.tarefa .tarefa--botao {
+  align-self: center;
+}
+
+.tarefa-excluir{
+  border: 0px;
+    border-radius: 17px;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+/* cores */
+.ok {
+  color: green;
+}
+
+.warning {
+  color: orange;
+}
+
+.danger {
+  color: red;
+}
+
+.concluido {
+  text-decoration: line-through;
+  color: #888;
+}

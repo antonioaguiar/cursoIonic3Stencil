@@ -10,53 +10,44 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface AppTodo {
+    'tarefas': Array<{ feito: boolean; descricao: string }>;
+  }
+  interface TodoContainer {
+    'saudacao': () => Promise<void>;
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLAppTodoElement extends Components.AppTodo, HTMLStencilElement {}
+  var HTMLAppTodoElement: {
+    prototype: HTMLAppTodoElement;
+    new (): HTMLAppTodoElement;
+  };
+
+  interface HTMLTodoContainerElement extends Components.TodoContainer, HTMLStencilElement {}
+  var HTMLTodoContainerElement: {
+    prototype: HTMLTodoContainerElement;
+    new (): HTMLTodoContainerElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'app-todo': HTMLAppTodoElement;
+    'todo-container': HTMLTodoContainerElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+  interface AppTodo {
+    'onEmiteTotal'?: (event: CustomEvent<any>) => void;
+    'tarefas'?: Array<{ feito: boolean; descricao: string }>;
   }
+  interface TodoContainer {}
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'app-todo': AppTodo;
+    'todo-container': TodoContainer;
   }
 }
 
@@ -66,7 +57,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'app-todo': LocalJSX.AppTodo & JSXBase.HTMLAttributes<HTMLAppTodoElement>;
+      'todo-container': LocalJSX.TodoContainer & JSXBase.HTMLAttributes<HTMLTodoContainerElement>;
     }
   }
 }

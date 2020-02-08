@@ -5,13 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
 
-  <script type="module" src="/build/stencil-starter-project-name.esm.js"></script>
-  <script nomodule src="/build/stencil-starter-project-name.js"></script>
+  <script type="module" src="/build/app-todo.esm.js"></script>
+  <script nomodule src="/build/app-todo.js"></script>
 
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <todo-container></todo-container>
 
+    <br>
+    <button onClick="mostrarSaudacao()">Apresentar Saudação</button>
+
+    <script>
+        mostrarSaudacao = function(){
+          let todo = document.querySelector('todo-container');
+          todo.saudacao();        }
+    </script>
 </body>
 </html>
